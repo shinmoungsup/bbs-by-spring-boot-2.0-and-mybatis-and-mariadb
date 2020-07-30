@@ -7,7 +7,7 @@
 		FROM starter_bbs1 ORDER BY id DESC
 	</select>
 
-		<select id="getOne" parameterType="long" resultType="Article">
+	<select id="getOne" parameterType="long" resultType="Article">
 		SELECT *
 		FROM starter_bbs1
 		WHERE id = #{id}
@@ -23,7 +23,6 @@
 		WHERE id = #{id}
 	</delete>
 
-
 	<insert id="add" parameterType="map" useGeneratedKeys="true"
 		keyProperty="id">
 		INSERT INTO starter_bbs1
@@ -31,4 +30,11 @@
 		title = #{title},
 		body = #{body}
 	</insert>
+
+	<update id="modify" parameterType="map">
+		UPDATE starter_bbs1
+		SET title = #{title},
+		body = #{body}
+		WHERE id = #{id}
+	</update>
 </mapper>

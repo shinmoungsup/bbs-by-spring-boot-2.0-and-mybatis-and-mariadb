@@ -32,7 +32,6 @@ public class ArticleServiceImpl implements ArticleService {
 		return CUtil.getAsLong(param.get("id"));
 	}
 
-
 	@Override
 	public int getTotalCount() {
 		return articleDao.getTotalCount();
@@ -46,5 +45,10 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public void delete(long id) {
 		articleDao.delete(id);
+	}
+
+	@Override
+	public void modify(Map<String, Object> param) {
+		articleDao.modify(param);
 	}
 }
